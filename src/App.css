@@ -1,0 +1,280 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#root{
+    width: 100vw;
+    height: 100vh;
+}
+
+.header{
+    width: fit-content;
+    height: fit-content; 
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.header-btns-container{
+    width: fit-content;
+    height: fit-content; 
+    display: flex;
+    gap: 1rem;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    z-index: 1;
+}
+
+.header-btns-container .header-btns:hover{
+    background-color: #D9D9D9;
+    cursor: pointer;
+}
+
+.main-section{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.materials-config-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+.setting-btns-container-left{
+    position: absolute;
+    top: 40%;
+    left: 0px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    z-index: 1;
+
+}
+
+.setting-btn-left{
+    border: none;
+    transition: ease 500ms;
+    background-color: transparent;
+    width: fit-content;    
+
+}
+
+.setting-btn-left > img{
+    width: 7.5rem;
+}
+
+.setting-btn-left:hover{
+    transition: ease 500ms;
+    cursor: pointer;
+    transform: translateX(-40px);
+}
+
+.setting-btns-container-right{
+    position: absolute;
+    top: 40%;
+    right: 0px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    z-index: 1;
+}
+
+.setting-btn-right{
+    border: none;
+    transition: ease 500ms;
+    background-color: transparent;
+}
+
+.setting-btn-right > img{
+    width: 7.5rem;
+}
+
+.setting-btn-right:hover{
+    transform: translateX(40px);
+    transition: ease 500ms;
+    cursor: pointer;
+}
+
+.navigation-container{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    gap:1rem;
+
+    font-weight:400;
+    font-size: 2rem;
+
+}
+
+.navigation-container-btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.pagination-circle{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border-radius: 1px solid black;
+}
+
+.active{
+    background-color: black;
+}
+
+.info-panel{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 50vw;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 0rem 5rem;
+
+    flex-direction: column;
+
+    color: white;
+    font-size: 20px;
+    font-weight: 100;
+    line-height:30px;
+    text-align: justify;
+
+    z-index: 1;
+}
+
+.info-panel h2{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.info-panel .price{
+    width: 100%;
+    text-align: end;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.hide{
+    display: none;
+}
+
+.position-btn{
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+
+    border: 0px solid black;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.descripcionSecundaria{
+    font-size: 0.5rem;
+    max-width: 120px;
+    text-align: left;
+    line-height: 12px;
+}
+
+@media screen and (max-width: 425px) {
+    .navigation-container {
+        font-size: 1.5rem;
+    }
+
+    .descripcionSecundaria{
+        display: none;
+    }
+
+    .position-btn{
+        display: none;
+    }
+
+    .setting-btns-container-right{
+        position: absolute;
+        top: 65%;
+        right: 0px;
+    
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    
+        z-index: 1;
+    }
+    
+    .setting-btn-right > img{
+        width: 4rem;
+        height: 3rem;
+    }
+    
+    .setting-btn-right:hover{
+        transform: translateX(40px);
+        transition: ease 500ms;
+        cursor: pointer;
+    }
+
+    .info-panel{
+        width: 70vw;
+        padding: 0rem 1.5rem;
+    
+    
+        font-size: 16px;
+        line-height:1.7em;
+        text-align: left;
+    }
+    
+    .info-panel h2{
+        font-size: 30px;
+    }
+    
+    .info-panel .price{
+        font-size: 30px;
+
+    }
+    
+    .responsive-btn{
+        display: none;
+    }
+
+    
+}
