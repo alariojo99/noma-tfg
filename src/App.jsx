@@ -2,7 +2,6 @@
 import { useEffect, useState, Suspense } from 'react'
 import './App.css'
 import { Canvas } from '@react-three/fiber'
-import Resizer from "./components/Resizer.jsx"
 import Model from "./components/Model.jsx"
 import Button from './components/Button.jsx'
 import SettingsButtons from './components/SettingsButtons.jsx'
@@ -65,7 +64,6 @@ function App() {
             }}
           >
             <Suspense fallback={null}>
-              <Resizer />
               <Model person={showPerson} medidas={showMedidas}/>
             </Suspense>
           </Canvas>

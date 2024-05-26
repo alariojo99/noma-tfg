@@ -159,6 +159,7 @@
 
 .active{
     background-color: black;
+    border: none;
 }
 
 .info-panel{
@@ -211,7 +212,7 @@
 }
 
 .descripcionSecundaria{
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     max-width: 120px;
     text-align: left;
     line-height: 12px;

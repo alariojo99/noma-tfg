@@ -11,7 +11,7 @@ import * as THREE from "three"
 
 export default function Model({person, medidas}) {
   const { glb, material_principal, current_material_principal, descripcionSecundaria } = useData();
-  const { camera, size } = useThree();
+  const { camera } = useThree();
   const meshRef = useRef();
 
   const [model, setModel] = useState(null);
@@ -38,27 +38,24 @@ export default function Model({person, medidas}) {
 
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load('medidas-yoruk.glb', (gltf) => {
+    loader.load(`medidas-${glb}`, (gltf) => {
       setModelMedidas(gltf);
     });
   }, [glb]);
 
-  const [colorMap, normalMap, glossMap, specularMap, aoMap] = useLoader(TextureLoader, [
+  const [colorMap, normalMap, glossMap, specularMap] = useLoader(TextureLoader, [
     `/${material_principal[current_material_principal]}/Diffuse.png`, 
     `/${material_principal[current_material_principal]}/Normal.png`,  
     `/${material_principal[current_material_principal]}/Gloss.png`,   
-    `/${material_principal[current_material_principal]}/Specular.png`,
-    `/${material_principal[current_material_principal]}/AO.png`,          
+    `/${material_principal[current_material_principal]}/Specular.png`,         
   ]);
 
-  [colorMap, normalMap, glossMap, specularMap, aoMap].forEach((texture) => {
+  [colorMap, normalMap, glossMap, specularMap].forEach((texture) => {
     texture.flipY = false;
     texture.anisotropy = 16;
   });
 
   colorMap.encoding = THREE.sRGBEncoding;
-
-  const scale = Math.min(size.width, size.height) / 1100;
 
   useEffect(() => {
     if (model) {
@@ -86,7 +83,7 @@ export default function Model({person, medidas}) {
 
   const checkCameraPosition1 = () => {
     const target = new Vector3(6, 0, 0);
-    return camera.position.distanceTo(target) < 1;
+    return camera.position.distanceTo(target) < 2;
   }
 
   const moveToNewPosition = (x,y,z) => {
@@ -97,7 +94,7 @@ export default function Model({person, medidas}) {
 
   useFrame(() => {
     if (shouldMove) {
-      camera.position.lerp(targetPosition, 0.01);  // Mueve la cámara solo si shouldMove es true
+      camera.position.lerp(targetPosition, 0.04);  // Mueve la cámara solo si shouldMove es true
       if (camera.position.distanceTo(targetPosition) < 0.1) {
         setShouldMove(false);  // Detiene el movimiento cuando la cámara esté suficientemente cerca del objetivo
       }
@@ -107,6 +104,22 @@ export default function Model({person, medidas}) {
     setIsCameraAtPosition1(checkCameraPosition1());
       
   });
+
+  useEffect(() => {
+    const handleResize = () => {
+      const aspectRatio = window.innerWidth / window.innerHeight;
+      const distance = 10 / aspectRatio; // Ajusta la distancia según el aspecto de la pantalla
+      camera.position.set(0, 0, distance + 2);
+      camera.updateProjectionMatrix();
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [camera]);
 
 
   return (
@@ -119,29 +132,28 @@ export default function Model({person, medidas}) {
         dampingFactor={0.1}
         position={[0,0,0]}
       />
+      
       <ambientLight intensity={0.5} color={"white"} />
       {model && <primitive 
         object={model.scene} 
         position={[0, 0, 0]} 
         rotation={[0,0,0]}
-        scale={[scale, scale, scale]} 
         ref={meshRef}
       />}
 
       {modelMedidas && medidas && <primitive 
         object={modelMedidas.scene} 
-        position={[0, -1.4, 0]} 
+        position={[0, 0, 0]} 
         rotation={[0,-1.57,0]}
-        scale={[scale, scale, scale]} 
         ref={meshRef}
       />}
 
       {modelPerson && person && 
         <><primitive 
           object={modelPerson.scene} 
-          position={[0, -0.63, 0]} 
+          position={[0, -0.83, 0]}
+          scale={[0.55, 0.55, 0.55]} 
           rotation={[0,0,0]}
-          scale={[scale/1.8, scale/1.8, scale/1.8]} 
           ref={meshRef}
         />
 
@@ -155,13 +167,13 @@ export default function Model({person, medidas}) {
       }
 
       {!isCameraAtPosition1 &&
-          <Html transform position={[2, 0, 0]} rotation={[0,0,0]} sprite>
-            <button onClick={()=>moveToNewPosition(6,0,0)} className="position-btn"></button>
+          <Html transform position={[3, 0, 0]} rotation={[0,0,0]} sprite>
+            <button onClick={()=>moveToNewPosition(7,0,0)} className="position-btn"></button>
           </Html>
       }
 
       {isCameraAtPosition1 && (
-        <Html transform position={[0, 0, 3.5]} rotation={[0, 1.6, 0]}>
+        <Html transform position={[0, 0, 5]} rotation={[0, 1.6, 0]}>
           <div>
             <p className="descripcionSecundaria" dangerouslySetInnerHTML={{ __html: descripcionSecundaria }}/>
           </div>

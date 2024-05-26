@@ -22,16 +22,38 @@ export default [
     },
     {
         name: "Noma Raji",
-        glb: "yoruk.glb",
+        glb: "raji.glb",
         current_material_principal: "material1",
         material_principal: {
             options: 3, 
             names: ["material1", "material2", "material3"],
-            material1: "materialYoruk1",
-            material2: "materialYoruk2",
-            material3: "materialYoruk3",
+            material1: "materialRaji1",
+            material2: "materialRaji2",
+            material3: "materialRaji3",
         },
-        descripcion_principal: "Raji",
+        descripcion_principal: "Poder estar de pie en un altillo con cama doble y armario de cuerpo entero en nuestra tiny más pequeña es posible. La Noma Rají es una Tiny House construida sobre un remolque, de 4,6 x 2,48 metros de tamaño, que se ajusta a las regulaciones Europeas (importante tener en cuenta cada país). </br> </br>  La estructura de la Tiny House, incluido el remolque, tiene entre 3,8 y 4 metros de altura. Tiene todas las comodidades como cocina, baño, sala de estar con sofá cama y lo más impresionante al ser tan pequeña, un altillo doble con acceso de pie y armario de cuerpo entero. Además, con el altillo adicional para almacenaje, podrás guardar todo lo necesario para la aventura.",
+        descripcion_secundaria: "<b>Raji</b> es una tiny house para 2-4 personas. </br></br> <u>Incluye</u>: </br></br>  <ul> <li>Cama doble</li> <li>Sofá cama</li> <li>Altillo doble</li>  <li>Almacenamiento bajo las escaleras</li> <li>Mesa y silla abatible </li> <li>Armario de cuerpo entero</li> </ul>",
+        caracteristicas: {
+            superficie: 17,
+            altura: 4,
+            anchura: 4,
+            longitud: 4,
+            precio: "35.500€" 
+        }
+    },
+    
+    {
+        name: "Nukak Klassik",
+        glb: "klassik.glb",
+        current_material_principal: "material1",
+        material_principal: {
+            options: 3, 
+            names: ["material1", "material2", "material3"],
+            material1: "materialKlassik1",
+            material2: "materialKlassik2",
+            material3: "materialKlassik3",
+        },
+        descripcion_principal: "Poder estar de pie en un altillo con cama doble y armario de cuerpo entero en nuestra tiny más pequeña es posible. La Noma Rají es una Tiny House construida sobre un remolque, de 4,6 x 2,48 metros de tamaño, que se ajusta a las regulaciones Europeas (importante tener en cuenta cada país). </br> </br>  La estructura de la Tiny House, incluido el remolque, tiene entre 3,8 y 4 metros de altura. Tiene todas las comodidades como cocina, baño, sala de estar con sofá cama y lo más impresionante al ser tan pequeña, un altillo doble con acceso de pie y armario de cuerpo entero. Además, con el altillo adicional para almacenaje, podrás guardar todo lo necesario para la aventura.",
         descripcion_secundaria: "<b>Raji</b> es una tiny house para 2-4 personas. </br></br> <u>Incluye</u>: </br></br>  <ul> <li>Cama doble</li> <li>Sofá cama</li> <li>Altillo doble</li>  <li>Almacenamiento bajo las escaleras</li> <li>Mesa y silla abatible </li> <li>Armario de cuerpo entero</li> </ul>",
         caracteristicas: {
             superficie: 17,
