@@ -40,15 +40,14 @@ function App() {
     <>
       {fullScreen && <img width={"144px"} src='./src/assets/logo-web-noma.png' className='logo' />}
       <div className="header-btns-container">
-        <Button icon="persona.png" handleClick = {handlePerson }  clas="header-btn responsive-btn"/>
-        <Button icon="regla.png" handleClick = {handleMedidas } clas="header-btn responsive-btn"/>
+        <Button icon="persona.png" handleClick = {handlePerson }  clas="header-btn"/>
+        <Button icon="regla.png" handleClick = {handleMedidas } clas="header-btn"/>
         <Button icon="icon-info.png" handleClick = {handleInfoToggle} clas="header-btn"/>
         <Button icon="icon-visible.png" handleClick = {handleFullScreenToggle } class="header-btn"/>
       </div>
       <section className='main-section'>
           <Canvas
             shadows
-            
             gl={
               {
                 outputEncoding: THREE.sRGBEncoding,

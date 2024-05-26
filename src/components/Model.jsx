@@ -131,6 +131,8 @@ export default function Model({person, medidas}) {
         enableDamping
         dampingFactor={0.1}
         position={[0,0,0]}
+        panSpeed={4}
+        zoomSpeed={1.5}
       />
       
       <ambientLight intensity={0.5} color={"white"} />
