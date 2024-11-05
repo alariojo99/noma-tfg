@@ -38,7 +38,7 @@ function App() {
 
   return (
     <>
-      {fullScreen && <img width={"144px"} src='./src/assets/logo-web-noma.png' className='logo' />}
+      {fullScreen && <img width={"144px"} src='./logo-web-noma.png' className='logo' />}
       <div className="header-btns-container">
         <Button icon="persona.png" handleClick = {handlePerson }  clas="header-btn"/>
         <Button icon="regla.png" handleClick = {handleMedidas } clas="header-btn"/>

@@ -15,7 +15,7 @@ export default function SettingsButtons( {position} ){
     const listMaterialPrincipal = material_principal.names.map((material)=>{
         return (
             <button onClick={handleClickPrincipal} key={material} value={material} className={`setting-btn-${position}`}>
-                <img src={`./src/assets/${material}.jpg`}/>
+                <img src={`./${material}.jpg`}/>
             </button>
         )
     })

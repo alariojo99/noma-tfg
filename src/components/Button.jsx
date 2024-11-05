@@ -15,7 +15,7 @@ export default function Button({ icon, handleClick, clas}){
     
     return( 
         <button className={clas} style={btnStyle} onClick={() => { setIsClicked(prevIsClicked => !prevIsClicked); handleClick() }}>
-                <img src={`src/assets/${icon}`} height={"30px"} />
+                <img src={`./${icon}`} height={"30px"} />
         </button>
     )
 }
