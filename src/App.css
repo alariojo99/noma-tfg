@@ -44,6 +44,11 @@
     cursor: pointer;
 }
 
+.canvas{
+    width: 100vw;
+    height: 100vh;
+}
+
 .main-section{
     display: flex;
     width: 100vw;
@@ -218,9 +223,21 @@
     line-height: 12px;
 }
 
-@media screen and (max-width: 425px) {
+.header-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 2px solid black;
+}
+
+@media screen and (max-width: 426px) {
     .navigation-container {
         font-size: 1.5rem;
+        width: 100%;
+        top: 80%;
     }
 
     .descripcionSecundaria{
@@ -231,17 +248,9 @@
         display: none;
     }
 
-    .setting-btns-container-right{
-        position: absolute;
-        top: 65%;
-        right: 0px;
-    
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    
-        z-index: 1;
-    }
+    /*.setting-btns-container-right{
+     
+    }*/
     
     .setting-btn-right > img{
         width: 4rem;
@@ -273,4 +282,8 @@
 
     }
 
+    .header-btn{
+        width: 40px;
+        height: 40px;
+    }
 }

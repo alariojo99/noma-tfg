@@ -7,9 +7,6 @@ export default function Button({ icon, handleClick, clas}){
 
     const btnStyle = {
             backgroundColor: isClicked ? "#D9D9D9" : "white",
-            border: "2px solid black",
-            width: "50px",
-            height: "50px",
     }
 
     

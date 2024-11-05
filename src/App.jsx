@@ -43,10 +43,11 @@ function App() {
         <Button icon="persona.png" handleClick = {handlePerson }  clas="header-btn"/>
         <Button icon="regla.png" handleClick = {handleMedidas } clas="header-btn"/>
         <Button icon="icon-info.png" handleClick = {handleInfoToggle} clas="header-btn"/>
-        <Button icon="icon-visible.png" handleClick = {handleFullScreenToggle } class="header-btn"/>
+        <Button icon="icon-visible.png" handleClick = {handleFullScreenToggle } clas="header-btn"/>
       </div>
       <section className='main-section'>
           <Canvas
+          className='canvas'
             shadows
             gl={
               {
